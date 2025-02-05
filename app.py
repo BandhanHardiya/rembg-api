@@ -13,17 +13,14 @@ def home():
 def remove_bg():
     if 'image' not in request.files:
         return {"error": "No image uploaded"}, 400
-
+    
     image_file = request.files['image']
     input_image = image_file.read()
     output_image = remove(input_image)
-
     output_io = BytesIO(output_image)
     output_io.seek(0)
-
     return send_file(output_io, mimetype='image/png')
 
 if __name__ == '__main__':
-    port = int(os.getenv("PORT", 10000))  # Force using port 10000
-    print(f"Running on port {port}")  # Debugging log
+    port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
