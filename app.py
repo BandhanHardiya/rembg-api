@@ -24,6 +24,6 @@ def remove_bg():
     return send_file(output_io, mimetype='image/png')
 
 if __name__ == '__main__':
-    port = int(os.getenv("PORT", 8080))  # Default to 8080 if PORT is not set
+    port = int(os.getenv("PORT", 10000))  # Force using port 10000
     print(f"Running on port {port}")  # Debugging log
     app.run(host='0.0.0.0', port=port)
