@@ -1,3 +1,3 @@
 #!/bin/bash
-export PORT=${PORT:-8080}  # Ensure PORT is set
+export PORT=10000  # Force port 10000
 gunicorn -b 0.0.0.0:$PORT app:app
