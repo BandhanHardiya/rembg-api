@@ -6,4 +6,4 @@ services:
     startCommand: gunicorn app:app
     envVars:
       - key: PORT
-        value: 10000
+        value: 8000
