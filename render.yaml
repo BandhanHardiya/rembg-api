@@ -3,7 +3,7 @@ services:
     name: background-remover
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn appp:app
     envVars:
       - key: PORT
         value: 8000
